@@ -93,6 +93,18 @@ class Api {
 	}
 
 	/**
+	 * Find nameday(s) for a name
+	 *
+	 * @param string $name
+	 * @param bool $exact
+	 * @return Request
+	 */
+	public function namedays_for_name($name, $exact = false)
+	{
+		return $this->request('namedays', array('name' => $name, 'exact' => (bool)$exact));
+	}
+
+	/**
 	 * List of banks
 	 *
 	 * @param string $language Language for internationalized country names
